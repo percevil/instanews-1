@@ -1,0 +1,102 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    scroll-behavior: smooth;
+  }
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: lighter;
+    font-size: 16px;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    height: 100vh;
+}
+.logo {
+    padding-top: 9vh;
+    width: 37vw;
+}
+.sections {
+    padding-bottom: 25vh;
+}
+.sectionselector {
+    font-size: 1.1rem;
+    
+}
+.sections h1 {
+    font-size: 0.8rem;
+    padding: 2.3vh 0;
+}
+.copyright {
+    font-size: 0.9rem;
+    padding-top: 1vh;
+    color: #c2c2c2;
+}
+
+@media screen and (min-width: 600px) {
+.logo {
+    width: 22vw;
+}
+header {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.navform {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 13vw;
+    padding-top: 6vh;
+}
+.sections {
+    padding-bottom: 0vh;
+    padding-top: 13vh;
+    padding-left: 3vw;
+}
+.sections h1 {
+    font-size: 0.9rem;
+}
+.copyright {
+    padding-top: 17vh;
+    width: 100%;
+}
+}
+
+@media screen and (min-width: 1000px) {
+header {
+    text-align: left;
+    justify-content: flex-start;
+    padding-left: 1vw;
+    padding-bottom: 1.5vh;
+}
+.logo {
+    max-height: 340px;
+    padding-bottom: 50px;
+    position: relative;
+}
+.navform {
+padding-top: 7vh;
+padding-bottom: 4vh;
+}
+.sections {
+    width: 100%;
+}
+.sections h1 {
+    font-size: 1rem;
+}
+.copyright {
+    padding-left: 30px;
+}
+
+}
