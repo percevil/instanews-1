@@ -20,14 +20,14 @@ header {
     align-items: center;
     text-align: center;
     flex-wrap: nowrap;
-    height: 100vh;
+    height: 90vh;
 }
 .logo {
-    padding-top: 9vh;
+    /* padding-top: vh; */
     width: 37vw;
 }
 .sections {
-    padding-bottom: 25vh;
+    /* padding-bottom: 5vh; */
 }
 .sectionselector {
     font-size: 1.1rem;
@@ -37,11 +37,38 @@ header {
     font-size: 0.8rem;
     padding: 2.3vh 0;
 }
+.articles {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.articles li {
+    background-color: white;
+    color: white;
+    height: 420px;
+    display: flex;
+    align-items: flex-end;
+    background-position: center;
+    background-size: 100vh;
+}
+.articles li p{
+    background-color: rgba(0, 0, 0, 0.7);
+    line-height: 1.5;
+    padding: 8px; 
+}
+.articles a {
+    text-decoration: none;
+    flex-basis: 50%;
+
+}
 .copyright {
     font-size: 0.9rem;
-    padding-top: 1vh;
+    text-align: center;
+    padding-bottom: 6vh;
     color: #c2c2c2;
 }
+
 
 @media screen and (min-width: 600px) {
 .logo {
@@ -57,18 +84,17 @@ header {
     justify-content: center;
     align-items: center;
     padding-right: 13vw;
-    padding-top: 6vh;
+    /* padding-top: 6vh; */
 }
 .sections {
-    padding-bottom: 0vh;
-    padding-top: 13vh;
+    /* padding-bottom: 0vh; */
+    /* padding-top: 1vh; */
     padding-left: 3vw;
 }
 .sections h1 {
     font-size: 0.9rem;
 }
 .copyright {
-    padding-top: 17vh;
     width: 100%;
 }
 }
@@ -78,16 +104,16 @@ header {
     text-align: left;
     justify-content: flex-start;
     padding-left: 1vw;
-    padding-bottom: 1.5vh;
+    /* padding-bottom: 1.5vh; */
 }
 .logo {
-    max-height: 340px;
-    padding-bottom: 50px;
+    max-width: 220px;
+    /* padding-bottom: px; */
     position: relative;
 }
 .navform {
-padding-top: 7vh;
-padding-bottom: 4vh;
+    /* padding-top: 5vh; */
+    /* padding-bottom: 4vh; */
 }
 .sections {
     width: 100%;
@@ -95,8 +121,11 @@ padding-bottom: 4vh;
 .sections h1 {
     font-size: 1rem;
 }
+.articles li {
+    flex-basis: 25%;
+}
 .copyright {
+    text-align: left;
     padding-left: 30px;
 }
-
 }

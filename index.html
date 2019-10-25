@@ -14,26 +14,38 @@
 <body>
     <header>
         <section class="navform">
-        <div class="logo">
-            <img class = "logo" src="assets/images/nyt-logo.svg" alt="logo">
-        </div>
-        <div class="sections">
-            <h1>Choose a section:</h1>
-            <select name="sections" class="sectionselector" id="">
-                <option value="">Sections ...</option>
-                <option value="">Home</option>
-                <option value="">Arts</option>
-                <option value="">Business</option>
-                <option value="">Sports</option>
-                <option value="">Technology</option>
-                <option value="">Fashion</option>
-            </select>
-        </div>
+            <div class="logo">
+                <img class="logo" src="assets/images/nyt-logo.svg" alt="logo">
+            </div>
+            <div class="sections">
+                <h1>Choose a section:</h1>
+                <select id="select-menu" name="sections">
+                    <option value="">Sections ...</option>
+                    <option value="home">Home</option>
+                    <option value="arts">Arts</option>
+                    <option value="business">Business</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                    <option value="fashion">Fashion</option>
+                </select>
+            </div>
         </section>
-        <section class="copyright">© Copyright 2019 INSTANEWS</section>
     </header>
 
+    <section class="content">
+        <div class="content-style">
+            <ul class="articles">
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <section class="copyright">© Copyright 2019 INSTANEWS</section>
+    </footer>
     <script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
