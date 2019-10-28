@@ -25,61 +25,44 @@ header {
   text-align: center;
   flex-wrap: nowrap;
   height: 90vh; }
+  @media (min-width: 1000px) {
+    header {
+      text-align: left;
+      -webkit-box-pack: start;
+              justify-content: flex-start;
+      padding-left: 1vw; } }
+  @media (min-width: 600px) {
+    header {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+              flex-direction: row;
+      flex-wrap: wrap; } }
+
+.loading {
+  height: 40vh; }
+  @media (min-width: 600px) {
+    .loading {
+      height: 19vh; } }
+  .loading .logo {
+    width: 150px; }
+    @media (min-width: 600px) {
+      .loading .logo {
+        width: 67px; } }
+  @media (min-width: 600px) {
+    .loading .sections h1 {
+      padding-top: 0; } }
 
 .logo {
-  width: 37vw; }
+  width: 220px; }
+  @media (min-width: 600px) {
+    .logo {
+      width: 22vw; } }
+  @media (min-width: 1000px) {
+    .logo {
+      max-width: 220px;
+      position: relative; } }
 
-.sectionselector {
-  font-size: 1.1rem; }
-
-.sections h1 {
-  font-size: 0.8rem;
-  padding: 2.3vh 0; }
-
-.articles {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-flex: 1;
-          flex-grow: 1;
-  flex-wrap: wrap; }
-
-.articles li {
-  color: white;
-  height: 420px;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: end;
-          align-items: flex-end;
-  background-position: center;
-  background-size: 100vh; }
-
-.articles li p {
-  background-color: rgba(0, 0, 0, 0.7);
-  line-height: 1.5;
-  padding: 8px; }
-
-.articles a {
-  text-decoration: none;
-  flex-basis: 50%; }
-
-.copyright {
-  font-size: 0.9rem;
-  text-align: center;
-  padding-top: 4vh;
-  padding-bottom: 7vh;
-  color: #c2c2c2; }
-
-@media screen and (min-width: 600px) {
-  .logo {
-    width: 22vw; }
-  header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-    flex-wrap: wrap; }
+@media (min-width: 600px) {
   .navform {
     display: -webkit-box;
     display: flex;
@@ -90,29 +73,72 @@ header {
             justify-content: center;
     -webkit-box-align: center;
             align-items: center;
-    padding-right: 13vw; }
+    padding-right: 13vw; } }
+
+.sectionselector {
+  font-size: 1.1rem; }
+
+@media (min-width: 1000px) {
   .sections {
-    padding-left: 3vw; }
-  .sections h1 {
-    font-size: 0.9rem; }
-  .copyright {
     width: 100%; } }
 
-@media screen and (min-width: 1000px) {
-  header {
-    text-align: left;
-    -webkit-box-pack: start;
-            justify-content: flex-start;
-    padding-left: 1vw; }
-  .logo {
-    max-width: 220px;
-    position: relative; }
+@media (min-width: 600px) {
   .sections {
-    width: 100%; }
-  .sections h1 {
-    font-size: 1rem; }
+    padding-left: 3vw; } }
+
+.sections h1 {
+  font-size: 0.8rem;
+  padding: 2.3vh 0; }
+  @media (min-width: 600px) {
+    .sections h1 {
+      font-size: 0.9rem; } }
+  @media (min-width: 1000px) {
+    .sections h1 {
+      font-size: 1rem; } }
+
+.articles {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+  flex-wrap: wrap; }
   .articles a {
-    flex-basis: 25%; }
-  .copyright {
-    text-align: left;
-    padding-left: 30px; } }
+    text-decoration: none;
+    flex-basis: 100%; }
+    @media (min-width: 480px) {
+      .articles a {
+        flex-basis: 50%; } }
+    @media (min-width: 1000px) {
+      .articles a {
+        flex-basis: 25%; } }
+  .articles li {
+    background-color: black;
+    color: white;
+    height: 420px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: end;
+            align-items: flex-end;
+    background-position: center;
+    background-size: 100vh; }
+    .articles li p {
+      background-color: rgba(0, 0, 0, 0.7);
+      line-height: 1.5;
+      padding: 8px; }
+
+.copyright {
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  color: #c2c2c2; }
+  @media (min-width: 1000px) {
+    .copyright {
+      text-align: left;
+      padding-left: 30px; } }
+  @media (min-width: 600px) {
+    .copyright {
+      width: 100%; } }

@@ -8,24 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
             url: 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S'
         })
         .done(function (data) {
-            console.log(data.results);
+            $('header').addClass('loading');
+            const results = data.results;
+            console.log(results);
+
+            const filteredResults = results.filter(function(article){
+                console.log("article", article);
+            return article.multimedia[4];
+            });
+            const slicedResults = filteredResults.slice(0, 12);
+            
+            console.log('filtered', filteredResults)
             $('.articles').empty();
-            if (data.results) {
-                data.results.splice(13, data.results.length);
-            }
-            $.each(data.results, function (key, value) {
-                if (value.multimedia.length > 0) {
-                    $('.articles').append("<a href='" + value.url + "' target='_blank'>" + "<li style='background-image: url(" + value.multimedia[4].url + "'>" + "<p>" + value.abstract + "</p>" + "</li>" + "</a>");
-                }
+
+            $.each(slicedResults, function (key, value) {
+            $('.articles').append("<a href='" + value.url + "' target='_blank'>" + "<li style='background-image: url(" + value.multimedia[4].url + "'>" + "<p>" + value.abstract + "</p>" + "</li>" + "</a>");
             })
         })
     });
 
 });
-
-// https://api.nytimes.com/svc/topstories/v2/home.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S
-// https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S
-// https://api.nytimes.com/svc/topstories/v2/business.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S
-// https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S
-// https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S
-// https://api.nytimes.com/svc/topstories/v2/fashion.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S

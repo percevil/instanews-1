@@ -5,10 +5,9 @@ html {
     box-sizing: inherit;
     scroll-behavior: smooth;
   }
-
 body {
-    background-color: black;
-    color: white;
+    background-color: $bgcolor;
+    color: $textcolor;
     font-family: 'Open Sans';
     font-weight: lighter;
     font-size: 16px;
@@ -21,96 +20,121 @@ header {
     text-align: center;
     flex-wrap: nowrap;
     height: 90vh;
+    @include desktop {
+        text-align: left;
+        justify-content: flex-start;
+        padding-left: 1vw;
+    }
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+.loading {
+    height: 40vh;
+    @include tablet {
+        height: 19vh;
+    }
+    @include desktop {
+    }
+    .logo {
+        width: 150px;
+        @include tablet {
+            width: 67px;
+        }
+        @include desktop {
+        }
+    }
+    .sections h1 {
+        @include tablet {
+        padding-top: 0;
+        }
+    }
 }
 .logo {
-    width: 37vw;
+    width: 220px;
+    @include tablet {
+        width: 22vw;
+    }
+    @include desktop {
+        max-width: 220px;
+        position: relative;
+    }
+}
+.navform {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-right: 13vw;
+    }
 }
 .sectionselector {
     font-size: 1.1rem;
 }
+.sections {
+    @include desktop {
+        width: 100%;
+    }
+    @include tablet {
+        padding-left: 3vw;
+    }
+}
 .sections h1 {
     font-size: 0.8rem;
     padding: 2.3vh 0;
+    @include tablet {
+        font-size: 0.9rem;
+    }
+    @include desktop {
+        font-size: 1rem;
+    }
 }
 .articles {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     flex-wrap: wrap;
-}
-.articles li {
-    color: white;
-    height: 420px;
-    display: flex;
-    align-items: flex-end;
-    background-position: center;
-    background-size: 100vh;
-}
-.articles li p{
-    background-color: rgba(0, 0, 0, 0.7);
-    line-height: 1.5;
-    padding: 8px; 
-}
-.articles a {
-    text-decoration: none;
-    flex-basis: 50%;
-
+    a {
+        text-decoration: none;
+        flex-basis: 100%;
+        @include mobile {
+            flex-basis: 50%;
+        }
+        @include desktop {
+            flex-basis: 25%;
+        }
+    }
+    li {
+        background-color: $bgcolor;
+        color: $textcolor;
+        height: 420px;
+        display: flex;
+        align-items: flex-end;
+        background-position: center;
+        background-size: 100vh;
+        p {
+            background-color: rgba($bgcolor, 0.7);
+            line-height: 1.5;
+            padding: 8px; 
+        }
+    }
 }
 .copyright {
     font-size: 0.9rem;
     text-align: center;
-    padding-top: 4vh;
-    padding-bottom: 7vh;
+    padding-top: 20px;
+    padding-bottom: 30px;
     color: #c2c2c2;
+    @include desktop {
+        text-align: left;
+        padding-left: 30px;
+    }
+    @include tablet {
+        width: 100%;
+    }
 }
 
-@media screen and (min-width: 600px) {
-.logo {
-    width: 22vw;
-}
-header {
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.navform {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-right: 13vw;
-}
-.sections {
-    padding-left: 3vw;
-}
-.sections h1 {
-    font-size: 0.9rem;
-}
-.copyright {
-    width: 100%;
-}
-}
 
-@media screen and (min-width: 1000px) {
-header {
-    text-align: left;
-    justify-content: flex-start;
-    padding-left: 1vw;
-}
-.logo {
-    max-width: 220px;
-    position: relative;
-}
-.sections {
-    width: 100%;
-}
-.sections h1 {
-    font-size: 1rem;
-}
-.articles a {
-    flex-basis: 25%;
-}
-.copyright {
-    text-align: left;
-    padding-left: 30px;
-}
-}
+
