@@ -30,6 +30,29 @@ header {
         flex-wrap: wrap;
     }
 }
+
+.loader {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    border: 4px dashed #dbdbdb;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: tranlate(-50%, -50%);
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .loading {
     height: 40vh;
     @include tablet {

@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     $('#select-menu').on('change', function () {
+        $('.loader').show();
         const selected = $(this).val();
+        
         $.ajax({
             method: 'GET',
             url: 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json?api-key=eCWDoGwIaY6G5tsDbjAVN3TmgUIJ1W6S'
@@ -28,7 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
             $.each(slicedResults, function (key, value) {
             $('.articles').append("<a href='" + value.url + "' target='_blank'>" + "<li style='background-image: url(" + value.multimedia[4].url + "'>" + "<p>" + value.abstract + "</p>" + "</li>" + "</a>");
             })
-        })
+        }).fail(function(){
+            console.log('there was an issue getting data from the NYT API');
+        }).always(function(){
+            // $('.loader').hide();
+        });
     });
 
 });

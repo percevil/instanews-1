@@ -38,6 +38,39 @@ header {
               flex-direction: row;
       flex-wrap: wrap; } }
 
+.loader {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  border: 4px dashed #dbdbdb;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  -webkit-box-align: center;
+          align-items: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: tranlate(-50%, -50%);
+          transform: tranlate(-50%, -50%);
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 .loading {
   height: 40vh; }
   @media (min-width: 600px) {
