@@ -53,14 +53,30 @@ header {
       padding-top: 0; } }
 
 .logo {
-  width: 220px; }
+  width: 220px;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 0; }
   @media (min-width: 600px) {
     .logo {
-      width: 22vw; } }
+      width: 22vw;
+      -webkit-transform: translate(50px, 0);
+              transform: translate(50px, 0); } }
   @media (min-width: 1000px) {
     .logo {
       max-width: 220px;
       position: relative; } }
+
+.logo-ani {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1; }
+  @media (min-width: 600px) {
+    .logo-ani {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0); } }
 
 @media (min-width: 600px) {
   .navform {
@@ -84,7 +100,7 @@ header {
 
 @media (min-width: 600px) {
   .sections {
-    padding-left: 3vw; } }
+    padding-left: 8vw; } }
 
 .sections h1 {
   font-size: 0.8rem;

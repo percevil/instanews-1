@@ -53,12 +53,24 @@ header {
 }
 .logo {
     width: 220px;
+    transform: translateY(10px);
+    opacity: 0;
+    // transition: all .5s .5s ease-out;
     @include tablet {
         width: 22vw;
+        transform: translate(50px, 0); 
     }
     @include desktop {
         max-width: 220px;
         position: relative;
+    }
+}
+.logo-ani {
+    transform: translateY(0);
+    transition: 0.5s;
+    opacity: 1;
+    @include tablet {
+    transform: translate(0, 0);
     }
 }
 .navform {
@@ -78,7 +90,7 @@ header {
         width: 100%;
     }
     @include tablet {
-        padding-left: 3vw;
+        padding-left: 8vw;
     }
 }
 .sections h1 {

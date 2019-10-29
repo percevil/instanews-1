@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    $(document).ready(function (){
+        $('.logo').addClass('logo-ani');
+    })
 
     $('#select-menu').on('change', function () {
         const selected = $(this).val();
@@ -9,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .done(function (data) {
             $('header').addClass('loading');
+            $('.logo').addClass('logo-ani');
             const results = data.results;
             console.log(results);
 
