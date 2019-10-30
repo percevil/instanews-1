@@ -113,6 +113,13 @@ header {
               flex-direction: row;
       flex-wrap: wrap; } }
 
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
 .loader {
   display: none;
   position: absolute;
@@ -157,7 +164,7 @@ header {
       .loading .logo {
         width: 67px; } }
   @media (min-width: 600px) {
-    .loading .sections h1 {
+    .loading .sections h2 {
       padding-top: 0; } }
 
 .logo {
@@ -210,14 +217,14 @@ header {
   .sections {
     padding-left: 8vw; } }
 
-.sections h1 {
+.sections h2 {
   font-size: 0.8rem;
   padding: 2.3vh 0; }
   @media (min-width: 600px) {
-    .sections h1 {
+    .sections h2 {
       font-size: 0.9rem; } }
   @media (min-width: 1000px) {
-    .sections h1 {
+    .sections h2 {
       font-size: 1rem; } }
 
 .articles {
