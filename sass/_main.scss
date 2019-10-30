@@ -111,6 +111,23 @@ header {
         padding-right: 13vw;
     }
 }
+.selectric {
+    height: 25px;
+    .label {
+        line-height: 23px;
+    }
+    .button {
+        height: 23px;
+        width: 30px;
+    }
+}
+.selectric-scroll {
+    li {
+        height: 25px;
+        line-height: 6px;
+        transition: 0.3s;
+    }
+}
 .sectionselector {
     font-size: 1.1rem;
 }

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $(document).ready(function (){
         $('.logo').addClass('logo-ani');
+        $('select').selectric();
     })
 
     $('#select-menu').on('change', function () {
