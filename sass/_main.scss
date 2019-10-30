@@ -150,10 +150,21 @@ header {
         align-items: flex-end;
         background-position: center;
         background-size: 100vh;
+        overflow: hidden;
+        &:hover {
+            p {
+                transform: translateY(0);
+                transition: 0.4s ease-in-out;
+                opacity: 1;
+            }
+        }
         p {
             background-color: rgba($bgcolor, 0.7);
             line-height: 1.5;
             padding: 8px; 
+            transform: translateY(100%);
+            transition: 0.4s ease-in-out;
+            opacity: 0;
         }
     }
 }

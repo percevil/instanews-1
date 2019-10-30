@@ -250,11 +250,23 @@ header {
     -webkit-box-align: end;
             align-items: flex-end;
     background-position: center;
-    background-size: 100vh; }
+    background-size: 100vh;
+    overflow: hidden; }
+    .articles li:hover p {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      -webkit-transition: 0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
+      opacity: 1; }
     .articles li p {
       background-color: rgba(0, 0, 0, 0.7);
       line-height: 1.5;
-      padding: 8px; }
+      padding: 8px;
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+      -webkit-transition: 0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
+      opacity: 0; }
 
 .copyright {
   font-size: 0.9rem;
