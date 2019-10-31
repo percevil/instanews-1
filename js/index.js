@@ -26,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             const slicedResults = filteredResults.slice(0, 12);
             console.log('filtered', filteredResults)
-            //empty
+            
+            //refresher
             $('.articles').empty();
+            
             //loop
             $.each(slicedResults, function (key, value) {
             $('.articles').append("<a href='" + value.url + "' target='_blank'>" + "<li style='background-image: url(" + value.multimedia[4].url + "'>" + "<p>" + value.abstract + "</p>" + "</li>" + "</a>");

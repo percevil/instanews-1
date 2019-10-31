@@ -9,7 +9,7 @@ body {
     background-color: $bgcolor;
     color: $textcolor;
     font-family: 'Open Sans';
-    font-weight: lighter;
+    font-weight: 300;
     font-size: 16px;
 }
 header {
@@ -29,6 +29,7 @@ header {
         flex-direction: row;
         flex-wrap: wrap;
     }
+    
 }
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
@@ -65,14 +66,10 @@ header {
     @include tablet {
         height: 20vh;
     }
-    @include desktop {
-    }
     .logo {
         width: 150px;
         @include tablet {
             width: 67px;
-        }
-        @include desktop {
         }
     }
     .sections h2 {
@@ -102,7 +99,7 @@ header {
     transform: translate(0, 0);
     }
 }
-.navform {
+.menu {
     @include tablet {
         display: flex;
         flex-direction: row;
@@ -128,10 +125,7 @@ header {
         transition: 0.3s;
     }
 }
-.sectionselector {
-    font-size: 1.1rem;
-}
-.sections {
+.navigation {
     @include desktop {
         width: 100%;
     }
@@ -139,7 +133,7 @@ header {
         padding-left: 8vw;
     }
 }
-.sections h2 {
+.navigation h2 {
     font-size: 0.8rem;
     padding: 2.3vh 0;
     @include tablet {
@@ -187,9 +181,13 @@ header {
             background-color: rgba($bgcolor, 0.7);
             line-height: 1.5;
             padding: 8px; 
-            transform: translateY(100%);
-            transition: 0.4s ease-in-out;
-            opacity: 0;
+            transform: translateY(0);
+            opacity: 1;
+            @include mobile {
+                transform: translateY(100%);
+                transition: 0.4s ease-in-out;
+                opacity: 0;
+            }
         }
     }
 }
@@ -207,6 +205,3 @@ header {
         width: 100%;
     }
 }
-
-
-

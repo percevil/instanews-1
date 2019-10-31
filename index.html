@@ -7,19 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instanews NYT News Reader</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/selectric@1.13.0/public/selectric.css">
-
     <link rel="stylesheet" href="./build/css/style.min.css">
 </head>
 
 <body>
     <div class="loader"></div>
     <header class="header">
-        <section class="navform">
+        <section class="menu">
             <div class="logo">
                 <h1 class="screen-reader-text">Instanews NYT News Reader</h1>
-                <img class="logo" id="logo" src="assets/images/nyt-logo.svg" alt="logo">
+                <img class="logo" id="logo" src="assets/images/nyt-logo.svg" alt="nyt-logo">
             </div>
-            <div class="sections">
+            <navigation class="navigation">
                 <h2>Choose a section:</h2>
                 <select id="select-menu" name="sections" class="sectionselector">
                     <option value="">Sections ...</option>
@@ -30,7 +29,7 @@
                     <option value="technology">Technology</option>
                     <option value="fashion">Fashion</option>
                 </select>
-            </div>
+            </navigation>
         </section>
     </header>
 
