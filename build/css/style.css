@@ -53,11 +53,11 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  background-color: black;
-  color: white;
   font-family: 'Open Sans';
+  font-size: 16px;
   font-weight: 300;
-  font-size: 16px; }
+  color: white;
+  background-color: black; }
 
 header {
   display: -webkit-box;
@@ -65,25 +65,52 @@ header {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
-  -webkit-box-pack: center;
-          justify-content: center;
+  flex-wrap: nowrap;
   -webkit-box-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
   text-align: center;
-  flex-wrap: nowrap;
   height: 90vh; }
-  @media (min-width: 1000px) {
-    header {
-      text-align: left;
-      -webkit-box-pack: start;
-              justify-content: flex-start;
-      padding-left: 1vw; } }
   @media (min-width: 600px) {
     header {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
               flex-direction: row;
       flex-wrap: wrap; } }
+  @media (min-width: 1000px) {
+    header {
+      -webkit-box-pack: start;
+              justify-content: flex-start;
+      text-align: left;
+      padding-left: 1vw; } }
+
+@media (min-width: 600px) {
+  .header-container {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    padding-right: 13vw; } }
+
+.post-change-header {
+  height: 40vh; }
+  @media (min-width: 600px) {
+    .post-change-header {
+      height: 20vh; } }
+  .post-change-header .logo {
+    width: 150px; }
+    @media (min-width: 600px) {
+      .post-change-header .logo {
+        width: 67px; } }
+  @media (min-width: 600px) {
+    .post-change-header .navigation h2 {
+      padding-top: 0; } }
 
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -92,7 +119,7 @@ header {
   width: 1px;
   overflow: hidden; }
 
-.loader {
+.loading-icon {
   display: none;
   position: absolute;
   z-index: 9999;
@@ -125,20 +152,6 @@ header {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
-.loading {
-  height: 40vh; }
-  @media (min-width: 600px) {
-    .loading {
-      height: 20vh; } }
-  .loading .logo {
-    width: 150px; }
-    @media (min-width: 600px) {
-      .loading .logo {
-        width: 67px; } }
-  @media (min-width: 600px) {
-    .loading .sections h2 {
-      padding-top: 0; } }
-
 .logo {
   width: 220px;
   -webkit-transform: translateY(10px);
@@ -154,51 +167,24 @@ header {
       max-width: 220px;
       position: relative; } }
 
-.logo-ani {
+.logo-animation {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 1; }
   @media (min-width: 600px) {
-    .logo-ani {
+    .logo-animation {
       -webkit-transform: translate(0, 0);
               transform: translate(0, 0); } }
 
 @media (min-width: 600px) {
-  .menu {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-    -webkit-box-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-            align-items: center;
-    padding-right: 13vw; } }
-
-.selectric {
-  height: 25px; }
-  .selectric .label {
-    line-height: 23px; }
-  .selectric .button {
-    height: 23px;
-    width: 30px; }
-
-.selectric-scroll li {
-  height: 25px;
-  line-height: 6px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
+  .navigation {
+    padding-left: 8vw; } }
 
 @media (min-width: 1000px) {
   .navigation {
     width: 100%; } }
-
-@media (min-width: 600px) {
-  .navigation {
-    padding-left: 8vw; } }
 
 .navigation h2 {
   font-size: 0.8rem;
@@ -209,6 +195,20 @@ header {
   @media (min-width: 1000px) {
     .navigation h2 {
       font-size: 1rem; } }
+
+.selectric {
+  height: 25px; }
+  .selectric .label {
+    line-height: 23px; }
+  .selectric .button {
+    width: 30px;
+    height: 23px; }
+
+.selectric-scroll li {
+  height: 25px;
+  line-height: 6px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
 
 .articles {
   display: -webkit-box;
@@ -232,15 +232,15 @@ header {
       .articles a {
         flex-basis: 25%; } }
   .articles li {
-    background-color: black;
-    color: white;
-    height: 420px;
     display: -webkit-box;
     display: flex;
     -webkit-box-align: end;
             align-items: flex-end;
+    color: white;
+    background-color: black;
     background-position: center;
-    background-size: 100vh;
+    background-size: cover;
+    height: 420px;
     overflow: hidden; }
     .articles li:hover p {
       -webkit-transform: translateY(0);
@@ -265,10 +265,10 @@ header {
 
 .copyright {
   font-size: 0.9rem;
+  color: #c2c2c2;
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 30px;
-  color: #c2c2c2; }
+  padding-bottom: 30px; }
   @media (min-width: 1000px) {
     .copyright {
       text-align: left;

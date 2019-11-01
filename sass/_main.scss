@@ -6,30 +6,55 @@ html {
     scroll-behavior: smooth;
   }
 body {
-    background-color: $bgcolor;
-    color: $textcolor;
     font-family: 'Open Sans';
-    font-weight: 300;
     font-size: 16px;
+    font-weight: 300;
+    color: $textcolor;
+    background-color: $bgcolor;
 }
 header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     height: 90vh;
-    @include desktop {
-        text-align: left;
-        justify-content: flex-start;
-        padding-left: 1vw;
-    }
     @include tablet {
         flex-direction: row;
         flex-wrap: wrap;
     }
-    
+    @include desktop {
+        justify-content: flex-start;
+        text-align: left;
+        padding-left: 1vw;
+    }
+}
+.header-container {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-right: 13vw;
+    }
+}
+.post-change-header {
+    height: 40vh;
+    @include tablet {
+        height: 20vh;
+    }
+    .logo {
+        width: 150px;
+        @include tablet {
+            width: 67px;
+        }
+    }
+    .navigation h2 {
+        @include tablet {
+        padding-top: 0;
+        }
+    }
 }
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
@@ -37,9 +62,8 @@ header {
     height: 1px;
     width: 1px;
     overflow: hidden;
-
 }
-.loader {
+.loading-icon {
     display: none;
     position: absolute;
     z-index: 9999;
@@ -61,23 +85,7 @@ header {
         transform: rotate(360deg);
     }
 }
-.loading {
-    height: 40vh;
-    @include tablet {
-        height: 20vh;
-    }
-    .logo {
-        width: 150px;
-        @include tablet {
-            width: 67px;
-        }
-    }
-    .sections h2 {
-        @include tablet {
-        padding-top: 0;
-        }
-    }
-}
+
 .logo {
     width: 220px;
     transform: translateY(10px);
@@ -91,7 +99,7 @@ header {
         position: relative;
     }
 }
-.logo-ani {
+.logo-animation {
     transform: translateY(0);
     transition: 0.5s;
     opacity: 1;
@@ -99,38 +107,12 @@ header {
     transform: translate(0, 0);
     }
 }
-.menu {
-    @include tablet {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-right: 13vw;
-    }
-}
-.selectric {
-    height: 25px;
-    .label {
-        line-height: 23px;
-    }
-    .button {
-        height: 23px;
-        width: 30px;
-    }
-}
-.selectric-scroll {
-    li {
-        height: 25px;
-        line-height: 6px;
-        transition: 0.3s;
-    }
-}
 .navigation {
-    @include desktop {
-        width: 100%;
-    }
     @include tablet {
         padding-left: 8vw;
+    }
+    @include desktop {
+        width: 100%;
     }
 }
 .navigation h2 {
@@ -141,6 +123,23 @@ header {
     }
     @include desktop {
         font-size: 1rem;
+    }
+}
+.selectric {
+    height: 25px;
+    .label {
+        line-height: 23px;
+    }
+    .button {
+        width: 30px;
+        height: 23px;
+    }
+}
+.selectric-scroll {
+    li {
+        height: 25px;
+        line-height: 6px;
+        transition: 0.3s;
     }
 }
 .articles {
@@ -162,13 +161,13 @@ header {
         }
     }
     li {
-        background-color: $bgcolor;
-        color: $textcolor;
-        height: 420px;
         display: flex;
         align-items: flex-end;
+        color: $textcolor;
+        background-color: $bgcolor;
         background-position: center;
-        background-size: 100vh;
+        background-size: cover;
+        height: 420px;
         overflow: hidden;
         &:hover {
             p {
@@ -177,26 +176,26 @@ header {
                 opacity: 1;
             }
         }
-        p {
-            background-color: rgba($bgcolor, 0.7);
-            line-height: 1.5;
-            padding: 8px; 
-            transform: translateY(0);
-            opacity: 1;
-            @include mobile {
-                transform: translateY(100%);
-                transition: 0.4s ease-in-out;
-                opacity: 0;
+    p {
+        background-color: rgba($bgcolor, 0.7);
+        line-height: 1.5;
+        padding: 8px; 
+        transform: translateY(0);
+        opacity: 1;
+        @include mobile {
+            transform: translateY(100%);
+            transition: 0.4s ease-in-out;
+            opacity: 0;
             }
         }
     }
 }
 .copyright {
     font-size: 0.9rem;
+    color: $fttextcolor;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 30px;
-    color: #c2c2c2;
     @include desktop {
         text-align: left;
         padding-left: 30px;
