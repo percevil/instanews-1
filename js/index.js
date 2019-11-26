@@ -16,15 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .done(function (data) {
                 $('header').addClass('post-change-header');
                 const results = data.results;
-                console.log(results);
 
                 //filter
                 const filteredResults = results.filter(function (article) {
-                    console.log("article", article);
                     return article.multimedia[4];
                 });
                 const slicedResults = filteredResults.slice(0, 12);
-                console.log('filtered', filteredResults)
 
                 //refresher
                 $('.articles').empty();
@@ -33,8 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 $.each(slicedResults, function (key, value) {
                     $('.articles').append("<a href='" + value.url + "' target='_blank'>" + "<li style='background-image: url(" + value.multimedia[4].url + "'>" + "<p>" + value.abstract + "</p>" + "</li>" + "</a>");
                 })
+                
             }).fail(function () {
-                console.log('there was an issue getting data from the NYT API');
+                alert('There was an issue getting data from the NYT API');
+
             }).always(function () {
                 $('.loading-icon').hide();
             });
